@@ -151,4 +151,3 @@
 //     console.log(fruits[i])
 // }
 
-//xyz
