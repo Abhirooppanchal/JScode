@@ -148,6 +148,52 @@
 // //For loop:it is traditional way, JS has much better way than this
 // const fruits = ['mango','apple','banana']
 // for(let i=0;i<fruits.length;i++){
-//     console.log(fruits[i])
+//      console.log(fruits[i])
 // }
+ 
+// //using forEach method
+// const fruits = ['mango','apple','banana']
+// fruits.forEach((elements)=>{
+//     console.table(elements)
+// })
 
+// //now lets create array of object
+// const arr = [
+//     {name:'ramesh',salary:1000},
+//     {name:'mukesh',salary:2000},
+//     {name:'hitesh',salary:2300}
+// ]
+// console.log("salary of employees before:")
+// arr.forEach(item=>{
+//     //const {name,salary} = employee
+//     console.log(item.salary)
+// })
+// console.log("salary of employees after increment")
+// salaryAI = []
+// arr.forEach(item=>{
+//     item.salary += 1000
+//     salaryAfterIncrement.push(item)
+// })
+// console.table(salaryAfterIncrement)
+// //in case of new array like above , to push items, we'll use map which automatically push items in it.
+//we do not need to predefine the array.
+// const salaryAI = arr.map(item=>{
+//     item.salary+=1000
+//     return item
+// })
+// console.table(salaryAI)
+// //The feature of map is that it return an array as well as iterate. It is used everywhere in react.
+
+//Now we'll use filter method which is used to filter out elements from an array.
+//it also return an array as well as iterate.
+
+const ToDos = [
+    {id:1,task:"eat"},
+    {id:2,task:"sleep"},
+    {id:3,task:"code"},
+    {id:4,task:"game"}
+]
+const NewToDo = ToDos.filter(item=>{
+    return item.id%4!=0
+})
+console.table(NewToDo) 
