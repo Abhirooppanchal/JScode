@@ -186,14 +186,38 @@
 
 //Now we'll use filter method which is used to filter out elements from an array.
 //it also return an array as well as iterate.
+// const ToDos = [
+//     {id:1,task:"eat"},
+//     {id:2,task:"sleep"},
+//     {id:3,task:"code"},
+//     {id:4,task:"game"}
+// ]
+// const NewToDo = ToDos.filter(item=>{
+//     return item.id%4!=0
+// })
+// console.log(NewToDo)
 
-const ToDos = [
-    {id:1,task:"eat"},
-    {id:2,task:"sleep"},
-    {id:3,task:"code"},
-    {id:4,task:"game"}
-]
-const NewToDo = ToDos.filter(item=>{
-    return item.id%4!=0
-})
-console.table(NewToDo) 
+
+// //filter using function
+// const removeToDo=(id)=>{
+//     const newToDO=ToDos.filter(items=>items.id<id)
+//     console.table(newToDO)
+// }
+// const ToDos = [
+//         {id:1,task:"eat"},
+//         {id:2,task:"sleep"},
+//         {id:3,task:"code"},
+//         {id:4,task:"game"}
+// ]
+// removeToDo(4)
+
+//Another example for filter, here the user is filtered out as per the condition.
+// const users =[
+//     {name:'ram',sal:2000},
+//     {name:'sam',sal:3000},
+//     {name:'ham',sal:4000},
+// ]
+// const ft = users.filter(items=>{
+//     return items.sal>=3000
+// })
+// console.table(ft)
