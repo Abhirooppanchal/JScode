@@ -221,3 +221,19 @@
 //     return items.sal>=3000
 // })
 // console.table(ft)
+
+//for network request, we'll use fetch which makes a promise to be resolved or be rejected,(it return a promise) so we'll use .then
+//then takes function as an argument, take a look on the code.
+// fetch('https://jsonplaceholder.typicode.com/posts')         //in this line we make a network request and it return a promise.
+// .then(res=>{                                                //return promise is handled by then
+//     //console.log(res)        //by doing this only then we do not get any meaningful data, we need to parse it in json.
+//     res.json().then(result=>{console.table(result)})        //json method also takes function as an argument and return a promise so to handle it we'll use .then
+// })                                                          //above code is bit strange so we'll modify it
+
+//modifications of above code is 
+function fetchPost(){
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(res=>res.json())
+    .then(result=>console.table(result))    //rejected in case of slow/no internet connection
+    .catch(error=>{console.log(error)})     //in case of promise got rejected, it is handled by catch block.
+}
