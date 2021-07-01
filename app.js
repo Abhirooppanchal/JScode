@@ -230,10 +230,31 @@
 //     res.json().then(result=>{console.table(result)})        //json method also takes function as an argument and return a promise so to handle it we'll use .then
 // })                                                          //above code is bit strange so we'll modify it
 
-//modifications of above code is 
-function fetchPost(){
-    fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(res=>res.json())
-    .then(result=>console.table(result))    //rejected in case of slow/no internet connection
-    .catch(error=>{console.log(error)})     //in case of promise got rejected, it is handled by catch block.
-}
+// //modifications of above code is 
+// function fetchPost(){
+//     fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then(res=>res.json())
+//     .then(result=>console.table(result))    //rejected in case of slow/no internet connection
+//     .catch(error=>{console.log(error)})     //in case of promise got rejected, it is handled by catch block.
+// }
+
+//here we can also use async await, code is:
+//async function fetcPost(){            //can also be written as.
+// const fetchPost = async () => {         //whenever we use await in any function then we need to declare the function async.
+//     try{
+//         const res = await fetch('https://jsonplaceholder.typicode.com/posts')       //using await is much more cleaner than then&catch.
+//         const result = await res.json()     //dont forget to use parenthesis with json
+//         console.table(result)
+//     }catch(error){
+//         console.log(error)
+//     }
+    
+// }
+
+// //Styling console.
+// console.log("%cMy name is Abhiroop %c Panchal",'color:yellow','background:red;font-size:18px')
+// //we can also create our own printing function like:
+
+const Print = (text)=>{console.log(`%c ${text}`,'background:red;font-size:15px')}
+// //now console.log is simply replaced by Print function.
+Print("My name is Abhiroop Panchal")
