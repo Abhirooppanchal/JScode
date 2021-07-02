@@ -258,3 +258,35 @@
 const Print = (text)=>{console.log(`%c ${text}`,'background:red;font-size:15px')}
 // //now console.log is simply replaced by Print function.
 Print("My name is Abhiroop Panchal")
+
+class Bike{
+    constructor(color,topspeed,engineCC){
+        this.color = color
+        this.topspeed = topspeed
+        this.engineCC = engineCC
+    }
+    intro(){
+        Print(`Bike color is ${this.color},
+        Topspeed is ${this.topspeed},
+        Engine is ${this.engineCC} cc.`)
+    }
+}
+class Car extends Bike{
+    constructor(color,topspeed,engineCC,airbags,capacity){
+        super(color,topspeed,engineCC)
+        this.airbags = airbags
+        this.capacity = capacity
+    }
+    intro(){
+        Print(`Car color is ${this.color},
+        Topspeed is ${this.topspeed},
+        Engine is ${this.engineCC} cc
+        It has ${this.airbags} airbags,
+        It is ${this.capacity} Seater.`)
+    }
+}
+
+const mt15 =  new Bike("black",110,155)
+const creta = new Car("black",150,1500,5,5)
+mt15.intro()
+creta.intro()
